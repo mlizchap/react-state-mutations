@@ -61,7 +61,7 @@ class Todo extends Component {
       <div>
         <p>{this.props.text}</p>
         <button onClick={this.changeMode}>Edit</button>
-        <button onClick={this.props.handleDelete}>Delete</button>
+        <button onClick={() => this.props.handleDelete(this.props.text)}>Delete</button>
       </div>
     )
   }
@@ -72,7 +72,12 @@ class Todo extends Component {
           defaultValue={this.props.text}
           ref={input => this.editInput = input}
           />
-        <button onClick={(input) => this.props.handleSave(this.editInput.value)}>Save</button>
+        <button onClick={(input, todo) => {
+            this.changeMode();
+            this.props.handleSave(this.editInput.value, this.props.text);
+        }}>
+          Save
+        </button>
         <button onClick={this.changeMode}>Cancel</button>
       </div>
     )
@@ -92,7 +97,6 @@ class App extends Component {
     super(props);
     this.state = {
       todos: [],
-      todoEdit: ''
     }
   }
   submitTodo = (val) => {
@@ -100,9 +104,14 @@ class App extends Component {
   }
   deleteTodo = (todo) => {
     console.log("delete: " + todo)
+    const todos = this.state.todos.filter(item => todo !== item);
+    this.setState({todos});
   }
-  saveTodo = (e) => {
-    console.log(e)
+  saveTodo = (input, todo) => {
+    const todos = this.state.todos.map(item => {
+      return (item === todo) ? input : item
+    })
+    this.setState({todos});
   }
   render() {
     return (
@@ -114,9 +123,8 @@ class App extends Component {
         {this.state.todos.map((todo, ind) => {
           return (
             <div key={ind}>
-              {/* <input key={ind} value={todo} onChange={(e, todo) => this.editTodo(e, todo)} /> */}
               <Todo key={ind} text={todo} 
-                      handleDelete={this.deleteTodo = this.deleteTodo.bind(this, todo)}
+                      handleDelete={this.deleteTodo}
                       handleSave={this.saveTodo}
                     />
             </div>
