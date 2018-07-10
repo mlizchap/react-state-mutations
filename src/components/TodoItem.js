@@ -15,7 +15,7 @@ class TodoItem extends Component {
       return (
         <div>
           {(this.state.editMode) ? 
-            <EditTodo handleChange={this.changeMode} {...this.props}/> : 
+            <EditTodo handleChange={this.changeMode} handleEdit={()=>console.log("this")} {...this.props}/> : 
             <ReadTodo handleChange={this.changeMode} {...this.props} /> 
           }
         </div>

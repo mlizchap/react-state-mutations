@@ -15,7 +15,7 @@ input {
   border-bottom: 2px solid black;
 }
 .todoInput:focus {
-  border-bottom: 2px solid orange;
+  border-bottom: 2px solid #55e7c8;
 }
 input[type="text"] {
   width: 250px;
@@ -25,11 +25,19 @@ input[type="submit"] {
   font-size: 20pt;
   font-family: 'Amatic SC', cursive;
 }
+input[type="submit"]:hover {
+  cursor: pointer;
+  color: #55e7c8;
+}
 button {
   outline: none;
   border: none;
   font-family: 'Amatic SC', cursive;
   font-size: 12pt;
+}
+button:hover {
+  cursor: pointer;
+  color: #55e7c8;
 }
 .todos {
   margin-top: 30px;
@@ -37,13 +45,20 @@ button {
 p {
   font-size: 20pt;
   display: inline;
-  margin-right: 150px;
+  margin-right: 50px;
   text-align: left;
+}
+p:hover {
+  cursor: pointer;
+}
+.readTodo {
+  text-align: left;
+  margin-left: 42%;
 }
 .editTodo {
   width: 150px;
 }
 
-.readBtns {
+/* .readBtns {
   display: inline;
-}
+} */

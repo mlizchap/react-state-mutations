@@ -13,7 +13,9 @@ class App extends Component {
     }
   }
   submitTodo = (val) => {
-    this.setState({ todos: [...this.state.todos, val]})
+    if (val) {
+      this.setState({ todos: [...this.state.todos, val]})
+    }
   }
   deleteTodo = (todo) => {
     const todos = this.state.todos.filter(item => todo !== item);
@@ -25,6 +27,9 @@ class App extends Component {
     })
     this.setState({todos});
   }
+  clickEdit = () => {
+    console.log("clicked")
+  }
   render() {
     return (
       <div className="App">
@@ -35,12 +40,15 @@ class App extends Component {
         <div className="todos">
           {this.state.todos.map((todo, ind) => {
             return (
-              <TodoItem 
-                key={ind} 
-                text={todo} 
-                handleDelete={this.deleteTodo}
-                handleSave={this.saveTodo}
-              />
+              <div key={ind}>
+                <TodoItem 
+                  key={ind} 
+                  text={todo} 
+                  handleDelete={this.deleteTodo}
+                  handleSave={this.saveTodo}
+                  handleEdit={this.clickEdit}
+                />
+              </div>
             )
           })}
         </div>
