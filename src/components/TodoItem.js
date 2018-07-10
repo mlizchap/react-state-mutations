@@ -10,6 +10,7 @@ class TodoItem extends Component {
     }
     changeMode = () => {
       this.setState({ editMode: !this.state.editMode });
+      console.log(this.editInput)
     }
 
     render() {

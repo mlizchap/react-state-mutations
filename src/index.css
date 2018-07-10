@@ -46,14 +46,14 @@ p {
   font-size: 20pt;
   display: inline;
   margin-right: 50px;
-  text-align: left;
+  /* text-align: left; */
 }
 p:hover {
   cursor: pointer;
 }
 .readTodo {
   text-align: left;
-  margin-left: 42%;
+  margin-left: 40%;
 }
 .editTodo {
   width: 150px;
