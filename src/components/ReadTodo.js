@@ -1,11 +1,15 @@
 import React, { Component } from 'react';
 
-const ReadTodo = (props) => {
+const ReadTodo = ({text, handleChange, handleDelete}) => {
     return (
-      <div>
-        <p>{props.text}</p>
-        <button onClick={props.handleChange}>Edit</button>
-        <button onClick={() => props.handleDelete(props.text)}>Delete</button>
+      <div className="readTodo">
+        {/* <div class="readText"> */}
+            <p>{text}</p>
+        {/* </div> */}
+        <div className="readBtns">
+            <button onClick={handleChange}>Edit</button>
+            <button onClick={() => handleDelete(text)}>Delete</button>
+        </div>
       </div>
     )
   }

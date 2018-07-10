@@ -32,16 +32,18 @@ class App extends Component {
 
         <InputForm handleSubmit={this.submitTodo}/>
 
-        {this.state.todos.map((todo, ind) => {
-          return (
-            <TodoItem 
-              key={ind} 
-              text={todo} 
-              handleDelete={this.deleteTodo}
-              handleSave={this.saveTodo}
-            />
-          )
-        })}
+        <div className="todos">
+          {this.state.todos.map((todo, ind) => {
+            return (
+              <TodoItem 
+                key={ind} 
+                text={todo} 
+                handleDelete={this.deleteTodo}
+                handleSave={this.saveTodo}
+              />
+            )
+          })}
+        </div>
       </div>
     );
   }

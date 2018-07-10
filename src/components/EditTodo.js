@@ -4,8 +4,9 @@ const EditTodo = (props) => {
     return (
       <div>
         <input 
-          defaultValue={props.text}
-          ref={input => this.editInput = input}
+            className="editTodo"
+            defaultValue={props.text}
+            ref={input => this.editInput = input}
           />
         <button onClick={(input, todo) => {
             props.handleChange();
@@ -13,7 +14,7 @@ const EditTodo = (props) => {
         }}>
           Save
         </button>
-        <button onClick={this.changeMode}>Cancel</button>
+        <button onClick={props.handleChange}>Cancel</button>
       </div>
     )
   }

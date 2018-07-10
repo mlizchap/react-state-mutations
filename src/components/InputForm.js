@@ -15,13 +15,14 @@ class InputForm extends Component {
           this.setState({inputVal: ''})
         }}>
           <input 
+            className="todoInput"
             type="text" 
             value={this.state.inputVal}
             onChange={(e) => this.setState({inputVal: e.target.value})}
           />
           <input 
             type="submit" 
-            value="submit" />
+            value="+" />
         </form>
       )
     }

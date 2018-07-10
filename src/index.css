@@ -1,5 +1,49 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: sans-serif;
+  font-family: 'Amatic SC', cursive;
+}
+
+input {
+  border: none;
+  outline: none;
+  font-family: 'Amatic SC', cursive;
+  font-size: 24pt;
+
+}
+.todoInput {
+  border-bottom: 2px solid black;
+}
+.todoInput:focus {
+  border-bottom: 2px solid orange;
+}
+input[type="text"] {
+  width: 250px;
+}
+input[type="submit"] {
+  margin-left: 10px;
+  font-size: 20pt;
+  font-family: 'Amatic SC', cursive;
+}
+button {
+  outline: none;
+  border: none;
+  font-family: 'Amatic SC', cursive;
+  font-size: 12pt;
+}
+.todos {
+  margin-top: 30px;
+}
+p {
+  font-size: 20pt;
+  display: inline;
+  margin-right: 150px;
+  text-align: left;
+}
+.editTodo {
+  width: 150px;
+}
+
+.readBtns {
+  display: inline;
 }
