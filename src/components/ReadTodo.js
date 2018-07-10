@@ -27,8 +27,8 @@ class ReadTodo extends Component {
                     {this.props.text}
                 </p>
               <div className="readBtns" style={(this.state.hovered) ? {display: 'inline'} : {display: 'none'}}>
-                  <button onClick={this.props.handleChange}>Edit</button>
-                  <button onClick={() => this.props.handleDelete(this.props.text)}>Delete</button>
+                  <button className="editBtn" onClick={this.props.handleChange}>Edit</button>
+                  <button className="deleteBtn" onClick={() => this.props.handleDelete(this.props.text)}>Delete</button>
               </div>
             </div>
         )        

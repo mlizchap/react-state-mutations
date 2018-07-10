@@ -12,11 +12,16 @@ input {
 
 }
 .todoInput {
-  border-bottom: 2px solid black;
+  border-bottom: 2px solid rgb(124, 132, 253);
+  /* border-image: linear-gradient(to right, #42d9f4 , rgb(124, 132, 253));
+  border-image-slice: 1; */
 }
 .todoInput:focus {
   border-bottom: 2px solid #55e7c8;
+  border-image: linear-gradient(to right, #42d9f4 , rgb(124, 132, 253));
+  border-image-slice: 1;
 }
+
 input[type="text"] {
   width: 250px;
 }
@@ -35,30 +40,29 @@ button {
   font-family: 'Amatic SC', cursive;
   font-size: 12pt;
 }
-button:hover {
+.editBtn:hover {
   cursor: pointer;
   color: #55e7c8;
+}
+.deleteBtn:hover {
+  cursor: pointer;
+  color: #eb9c9c;
 }
 .todos {
   margin-top: 30px;
 }
 p {
-  font-size: 20pt;
+  font-size: 16pt;
   display: inline;
   margin-right: 50px;
-  /* text-align: left; */
 }
 p:hover {
   cursor: pointer;
 }
 .readTodo {
   text-align: left;
-  margin-left: 40%;
+  margin-left: 35%;
 }
 .editTodo {
   width: 150px;
 }
-
-/* .readBtns {
-  display: inline;
-} */

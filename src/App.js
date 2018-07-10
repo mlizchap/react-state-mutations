@@ -21,14 +21,11 @@ class App extends Component {
     const todos = this.state.todos.filter(item => todo !== item);
     this.setState({todos});
   }
-  saveTodo = (input, todo) => {
+  editTodo = (input, todo) => {
     const todos = this.state.todos.map(item => {
       return (item === todo) ? input : item
     })
     this.setState({todos});
-  }
-  clickEdit = () => {
-    console.log("clicked")
   }
   render() {
     return (
@@ -45,8 +42,7 @@ class App extends Component {
                   key={ind} 
                   text={todo} 
                   handleDelete={this.deleteTodo}
-                  handleSave={this.saveTodo}
-                  handleEdit={this.clickEdit}
+                  handleSave={this.editTodo}
                 />
               </div>
             )
