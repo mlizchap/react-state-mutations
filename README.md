@@ -24,43 +24,48 @@
     this.setState({ users: [...this.state.users, newUser]})
     ```
 ### Deleting an Item 
-- methods to avoid on this 
-
-
-
-
-### 
-
-
-
-
-
-
-## Edit 
-```javascript 
-  saveTodo = (newInput, oldItem) => {
-    const todos = this.state.todos.map(item => {
-      return (item === oldItem) ? newInput : item
+- avoid using methods such as `splice` on this operation, instead use `slice`
+- **Method #1**: `slice`, this makes a copy of the array before the change and also a copy of the array after the item you wish to delete and merges the 2 together creating an array without the item you want to delete.
+    ```javascript
+    const { users } = this.state;
+    this.setState({ users: users.slice(0, indexToDelete).concat(users.slice(indexToDelete + 1)) })
+    ```
+- **Method #2**: `filter`, this array method filters through the array and makes a new copy of the array based on the callback function.  
+    ```javascript
+    const userToDelete = 'joe'
+    this.setState({ users: this.state.users.filter(user => user.name !== userToDelete )})
+    ```
+### Editing an Item
+- **Method #1**: `concat`, this breaks up the array into items before and after the pieces of state in the array and adds the edited piece of state between.  
+  ```javascript
+    this.setState({
+      users: 
+        this.state.users.slice(0, indexToEdit)
+        .concat({name: 'joe', age: this.state.users[indexToEdit].age + 1}) /* item we are editing */
+        .concat(this.state.users.slice(indexToEdit + 1))
     })
-    this.setState({todos});
-  }
-```
-- `map` returns a new array, therefore the original array is not mutated.  It takes the original item, and if the original item is equal to the old value we are editing, it changes the original item to the user's input.  Otherwise it returns the original item.
+  ```
+- **Method #2**: the `spread operator`, this is similar to `concat` just different syntax.
+  ```javascript
+    this.setState({ 
+      users:
+        [ ...this.state.users.slice(0, indexToEdit), 
+         { name: this.state.users[indexToEdit].name, age: 100 }, /* item we are editing */
+         ...this.state.users.slice(indexToEdit + 1)
+        ]
+    })
+  ```
+- **Method #3**: `map`, this is an array method that maps through the state array and has a callback function for each item that creates a ternary operator to find the item to edit.  If the item is found the item is mutated, else the item is returned.
+  ```javascript
+  const userToEdit = 'joe'
+  const users = this.state.users.map(user => {
+    return (user.name == userToEdit) ? {...user, age: 100} : user
+  })
+  this.setState({ users });
+  ```
 
-## Delete
-```javascript
-deleteTodo = (todo) => {
-  const todos = this.state.todos.filter(item => todo !== item);
-  this.setState({todos});
-```
-- `filter` also returns a new array.  It iterates through each item in the state. If the item in state is equal to the item we are trying to delete it gets filtered out of the new array.
 
-## Create 
-```javascript
-createTodo = (val) => {
-  if (val) {
-    this.setState({ todos: [...this.state.todos, val]})
-  }
-}
-```
-- Uses `destructuring`.  Makes a copy of the original array and adds the new value to the aray. 
+
+
+
+
