@@ -2,10 +2,10 @@
 - when changing the state in your app, you should not directly mutate the original array (it should be *immutable*).  Instead you should create a copy and mutate the copy. 
 
 ## Examples:
-[state as an array](https://codepen.io/mary-chap/pen/PBLmeL?editors=0011)
+- [State as an Array](https://codepen.io/mary-chap/pen/PBLmeL?editors=0011)
 
 ## Arrays
-- example piece of state: 
+- example of state as an array:
   ```javascript
     this.state = {
       users: [ { name: 'jane',age: 22 }, { name: 'joe', age: 31 }, { name: 'tyler', age: 28 } ]
