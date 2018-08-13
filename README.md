@@ -15,7 +15,7 @@
 - you should never use mutable methods such as `push` when adding items.  
 - **Method #1**: `concat`, this takes an array, makes a copy, and adds additional items to the array.
   ```javascript
-  const newUser = { name: 'tyler', age: 28 }
+  const newUser = { name: 'jake', age: 18 }
   this.setState({ users: this.state.users.concat(newUser) })
   ```
 - **Method #2**: the `spread operator`, this is similar to concat in that it creates a copy of the array
