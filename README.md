@@ -1,5 +1,40 @@
 # Mutating State 
-- when changing the state in your app, you should not directly mutate the original array. State must be treated as immutable. 
+- when changing the state in your app, you should not directly mutate the original array (it should be *immutable*).  Instead you should create a copy and mutate the copy. 
+
+## Examples:
+[https://codepen.io/mary-chap/pen/PBLmeL?editors=0011](state as an array)
+
+## Arrays
+- example piece of state: 
+  ```javascript
+    this.state = {
+      users: [ { name: 'jane',age: 22 }, { name: 'joe', age: 31 }, { name: 'tyler', age: 28 } ]
+    }
+  ```
+### Adding an item
+- you should never use mutable methods such as `push` when adding items.  
+- **Method #1**: `concat`, this takes an array, makes a copy, and adds additional items to the array.
+  ```javascript
+  const newUser = { name: 'tyler', age: 28 }
+  this.setState({ users: this.state.users.concat(newUser) })
+  ```
+- **Method #2**: the `spread operator`, this is similar to concat in that it creates a copy of the array
+    ```javascript
+    const newUser = { name: 'lucy', age: 20 }
+    this.setState({ users: [...this.state.users, newUser]})
+    ```
+### Deleting an Item 
+- methods to avoid on this 
+
+
+
+
+### 
+
+
+
+
+
 
 ## Edit 
 ```javascript 
