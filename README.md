@@ -2,7 +2,7 @@
 - when changing the state in your app, you should not directly mutate the original array (it should be *immutable*).  Instead you should create a copy and mutate the copy. 
 
 ## Examples:
-[https://codepen.io/mary-chap/pen/PBLmeL?editors=0011](state as an array)
+(https://codepen.io/mary-chap/pen/PBLmeL?editors=0011)[state as an array]
 
 ## Arrays
 - example piece of state: 
