@@ -84,7 +84,7 @@ state.posts[postToFind]
 ### Mapping Over an Object
 ```javascript
 { _.map(this.state.users, (user => <div>{user.name} | {user.age}</div>)) }
-``
+```
 
 ### Convert from an array -> object
 - user the lodash `mapKeys` function
