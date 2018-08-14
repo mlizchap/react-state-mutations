@@ -102,12 +102,12 @@ this.setState({ users:
 
 ### Removing items
 ```javascript
-this.setState({ users: _.omit(this.state.users, indexToDelete) })
+this.setState({ users: _.omit(this.state.users, keyToEdit) })
 ```
 
 ### Editing items
 ```javascript
-this.setState({ users: {...this.state.users, indexToEdit : {...this.state.users[indexToEdit], age: 21  }} })
+this.setState({ users: {...this.state.users, keyToEdit : {...this.state.users[keyToEdit], age: 21  }} })
 ```
 
 
