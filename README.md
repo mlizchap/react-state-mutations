@@ -14,7 +14,7 @@
   - [Mapping Over an Object](#mapping-over-an-object)
   - [Converting from an Array](#convert-from-an-array-to-an-object)
   - [Adding an Item](#adding-items)
-  - [Deleting an Item](#deleting-items)
+  - [Deleting an Item](#removing-items)
   - [Editing an Item](#editing-items)
 
 ## Arrays
