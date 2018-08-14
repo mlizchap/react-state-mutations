@@ -95,7 +95,9 @@ state.posts[postToFind]
 
 ### Adding items 
 ```javascript
-this.setState( this.state.users[keyToAdd] = {name: 'Lucy', age: 12, id: keyToAdd} );
+this.setState({ users: 
+      {  ...this.state.users,  4: { name: 'Tim', age: 22, id: 4 } } 
+});
 ```
 
 ### Removing items
