@@ -5,6 +5,18 @@
 - [State as an Array](https://codepen.io/mary-chap/pen/PBLmeL?editors=0011)
 - [State as an Object](https://codepen.io/mary-chap/pen/BPEjoW?editors=0111)
 
+## TOC
+- [Arrays](#arrays)
+  - [Adding an Item](#adding-an-item)
+  - [Deleting an Item](#deleting-an-item)
+  - [Editing an Item](#editing-an-item)
+- [Objects](#objects)
+  - [Mapping Over an Object](#mapping-over-an-object)
+  - [Converting from an Array](#convert-from-an-array-to-an-object)
+  - [Adding an Item](#adding-items)
+  - [Deleting an Item](#deleting-items)
+  - [Editing an Item](#editing-items)
+
 ## Arrays
 - example of state as an array:
   ```javascript
@@ -86,7 +98,7 @@ state.posts[postToFind]
 { _.map(this.state.users, (user => <div>{user.name} | {user.age}</div>)) }
 ```
 
-### Convert from an array -> object
+### Convert from an Array to an Object
 - user the lodash `mapKeys` function
   ```javascript
   _.mapKeys(this.state.users, 'id')
