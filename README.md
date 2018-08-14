@@ -80,6 +80,11 @@ state.posts[postToFind]
   $npm install --save lodash
   import _ as 'lodash'
   ```
+  
+### Mapping Over an Object
+```javascript
+{ _.map(this.state.users, (user => <div>{user.name} | {user.age}</div>)) }
+``
 
 ### Convert from an array -> object
 - user the lodash `mapKeys` function
