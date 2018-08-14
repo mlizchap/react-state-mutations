@@ -3,6 +3,7 @@
 
 ## Examples:
 - [State as an Array](https://codepen.io/mary-chap/pen/PBLmeL?editors=0011)
+- [State as an Object](https://codepen.io/mary-chap/pen/BPEjoW?editors=0111)
 
 ## Arrays
 - example of state as an array:
@@ -64,8 +65,42 @@
   this.setState({ users });
   ```
 
+## Objects 
+- keeping state as an object has the advantages of having faster lookups and cleaner state maipulation functions 
+- look up with an array
+```javascript
+state.posts.find(post => post.id === postToFind);
+```
+- lookup with an object
+```javascript
+state.posts[postToFind]
+```
+- lodash library 
+  ```javascript
+  $npm install --save lodash
+  import _ as 'lodash'
+  ```
+
+### Convert from an array -> object
+- user the lodash `mapKeys` function
+  ```javascript
+  _.mapKeys(this.state.users, 'id')
+  ```
 
 
+### Adding items 
+```javascript
+this.setState( this.state.users[keyToAdd] = {name: 'Lucy', age: 12, id: keyToAdd} );
+```
 
+### Removing items
+```javascript
+this.setState({ users: _.omit(this.state.users, indexToDelete) })
+```
+
+### Editing items
+```javascript
+this.setState({ users: {...this.state.users, indexToEdit : {...this.state.users[indexToEdit], age: 21  }} })
+```
 
 
