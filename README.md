@@ -54,7 +54,7 @@
     this.setState({
       users: 
         this.state.users.slice(0, indexToEdit)
-        .concat({name: 'joe', age: this.state.users[indexToEdit].age + 1}) /* item we are editing */
+        .concat({name: this.state.users[indexToEdit].name, age: 100}) /* item to edit */
         .concat(this.state.users.slice(indexToEdit + 1))
     })
   ```
@@ -63,7 +63,7 @@
     this.setState({ 
       users:
         [ ...this.state.users.slice(0, indexToEdit), 
-         { name: this.state.users[indexToEdit].name, age: 100 }, /* item we are editing */
+         { name: this.state.users[indexToEdit].name, age: 100 }, /* item to edit */
          ...this.state.users.slice(indexToEdit + 1)
         ]
     })
