@@ -114,7 +114,7 @@ this.setState({ users:
 
 ### Removing items
 ```javascript
-this.setState({ users: _.omit(this.state.users, keyToEdit) })
+this.setState({ users: _.omit(this.state.users, keyToRemove) })
 ```
 
 ### Editing items
